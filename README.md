@@ -96,13 +96,22 @@ We apply a monotonic tranformation $\ln(x)$ thus getting $\ln(U(x))=\frac{\ln([\
 
 We now use L'hopital as $n\rightarrow \infty$: $\lim_{n\rightarrow \infty}\frac{\alpha_1x_1^\rho \ln(x_1)+\alpha_2x_2^\rho \ln(x_2)}{\alpha_1x_1^\rho+\alpha_2x_2^\rho}=\frac{\alpha_1 \ln(x_1)+\alpha_2 \ln(x_2)}{\alpha_1+\alpha_2}=\frac{\ln(x_1^{\alpha_1}x_2^{\alpha_2})}{\alpha_1+\alpha_2}$
 
-Using the monotonic transformation $\e^x$ we see that $e^{\frac{1}{\alpha_1+\alpha_2}}x_1^{\alpha_1}x_2^{\alpha_2}$ is of the same form as the cobb-douglas utility function and we could even devide by the positive number $e^{1/(\alpha_1+\alpha_2)}$ to get exactly the form above, since this would also be a monotonic transformation.
+Using the monotonic transformation $e^x$ we see that $e^{\frac{1}{\alpha_1+\alpha_2}}x_1^{\alpha_1}x_2^{\alpha_2}$ is of the same form as the cobb-douglas utility function and we could even devide by the positive number $e^{1/(\alpha_1+\alpha_2)}$ to get exactly the form above, since this would also be a monotonic transformation.
 
 
-iii) 
+iii) Now to plot the lower contour set for 
 
+$$U(x)=[\alpha_1x_1^\rho+\alpha_2x_2^\rho]^{1/\rho}$$
 
+When $U(x)=1$ and $\rho=1/2$ and $\alpha_1=\alpha_2=1$:
 
+$$1=[x_1^{1/2}+x_2^{1/2}]^{2}$$
+
+$$(1-x_1^{1/2})^2=x_2$$
+
+The following Julia code should produce the lower contour set:
+
+ 
 
 
 
