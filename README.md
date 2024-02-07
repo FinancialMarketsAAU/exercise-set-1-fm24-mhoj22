@@ -109,9 +109,58 @@ $$1=[x_1^{1/2}+x_2^{1/2}]^{2}$$
 
 $$(1-x_1^{1/2})^2=x_2$$
 
-The following Julia code should produce the lower contour set:
+Using this the following Julia code should produce the lower contour set:
 
- 
+#Julia code
+using Plots
+X = 0.1:0.005:0.35     
+α = 0.5
+
+f(x) = (1-x^(1/2))^2
+
+y=[f(x) for x in X]
+
+plot(X,y, fillrange = zeros(size(X,1),1), 
+fillalpha = 0.3, label="{y∈R²:y≺x}")
+
+plot!(X,y,line = :dash, color = :red, 
+linewidth = 3, label="{y∈R²:y~x}")
+
+
+iv)
+
+Here are indifference curves for $k=0.4,0.5$ and $0.6$: $\rho=1/2$ and $\alpha_1=\alpha_2=1$:
+
+#Julia code
+using Plots
+X = 0.1:0.005:0.35
+K = 0.4:0.1:0.6
+α = 1/2
+
+f(x,k) = (k^α-x^α)^(1/α)
+
+y=[f(x,k) for x in X, k in K]
+
+plot(X, y, label=["K=0.4" "K=0.5" "K=0.6"])
+
+
+Now it will be plotted for $\rho=2$:
+
+#Julia code
+using Plots
+X = 0.1:0.005:0.35
+K = 0.4:0.1:0.6
+α = 2
+
+f(x,k) = (k^α-x^α)^(1/α)
+
+y=[f(x,k) for x in X, k in K]
+
+plot(X, y, label=["K=0.4" "K=0.5" "K=0.6"])
+
+
+
+
 
 
 
