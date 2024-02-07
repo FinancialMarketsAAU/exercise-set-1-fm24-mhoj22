@@ -160,6 +160,37 @@ plot(X, y, label=["K=0.4" "K=0.5" "K=0.6"])
 
 
 
+v) What happens when $\rho \rightarrow - \infty$. This will be quickly analyzed by rewriting the CES with $-\rho$ and taking high values of positive $\rho$. This Julia code should provide insight into the matter, but could have provided more if the functions didn't have the same domain which obviously becomes an obstacle in the graphical interpretation:
+
+
+#Julia code
+using Plots
+X = 0.51:0.0005:0.56
+K = 0.4:0.05:0.5
+α = 200
+
+f(x,k) = 1/((1/k^α-1/x^α)^(1/α))
+
+y=[f(x,k) for x in X, k in K]
+plot(X, y, label=["K=0.4" "K=0.45" "K=0.5"])
+
+f(0.5,0.4) #Here it is seen that 
+#the entire utility comes from 
+#the amount of y which is x2 already at p = -200.
+
+
+#Furthermore note that 
+
+f(0.41,0.4)
+
+But:
+#f(0.41,0.45)
+#can not persist. Which shows that the domain had to be chosen so as to make all functions take appropriate values.
+
+#Note that for an x_1 higher than a given k, we must have k=x_2 which shows that u(x)=min{x_1,x_2} as rho approaches negative infinity
+
+#Note that this could also be written with alpha 1 and 2 in front fo each.
+
 
 
 
